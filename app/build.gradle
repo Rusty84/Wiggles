@@ -76,8 +76,10 @@ dependencies {
 
     testImplementation 'junit:junit:4.13.2'
 
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     // compose navigation
     implementation "androidx.navigation:navigation-compose:$nav_compose_version"

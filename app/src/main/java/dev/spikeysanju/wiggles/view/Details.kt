@@ -59,11 +59,12 @@ import dev.spikeysanju.wiggles.data.FakeDogDatabase
 fun Details(navController: NavController, id: Int) {
 
     Scaffold(
+        modifier = Modifier.testTag("detailScreenContainer"),
         topBar = {
             TopAppBar(
                 title = {
                     Text(
-                        modifier = Modifier.testTag("topBarTitle"),
+                        modifier = Modifier.testTag("detailsTopBarTitle"),
                         text = "Details"
                     )
                 },
@@ -78,7 +79,7 @@ fun Details(navController: NavController, id: Int) {
                             .clickable {
                                 navController.navigateUp()
                             }
-                            .testTag("topBarBackButton"),
+                            .testTag("topBarBackIcon"),
                         tint = colorResource(id = R.color.text)
                     )
                 }

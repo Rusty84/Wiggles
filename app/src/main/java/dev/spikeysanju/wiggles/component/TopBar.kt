@@ -51,7 +51,7 @@ fun TopBar(onToggle: () -> Unit) {
                 textAlign = TextAlign.Start,
                 style = MaterialTheme.typography.h5,
                 color = MaterialTheme.colors.surface,
-                modifier = Modifier.testTag("topBarTitle")
+                modifier = Modifier.testTag("homeTopBarTitle")
             )
 
             Spacer(modifier = Modifier.height(8.dp))
@@ -61,7 +61,7 @@ fun TopBar(onToggle: () -> Unit) {
                 textAlign = TextAlign.Start,
                 style = MaterialTheme.typography.subtitle1,
                 color = MaterialTheme.colors.surface,
-                modifier = Modifier.testTag("topBarSubtitle")
+                modifier = Modifier.testTag("homeTopBarSubtitle")
             )
         }
         Row(
@@ -88,6 +88,7 @@ fun WigglesThemeSwitch(onToggle: () -> Unit) {
         contentDescription = null,
         modifier = Modifier
             .size(24.dp, 24.dp)
+            .testTag("themeToggleIcon")
             .clickable(onClick = onToggle),
         tint = colorResource(id = R.color.text)
     )
