@@ -53,7 +53,8 @@ fun ItemDogCard(dog: Dog, onItemClicked: (dog: Dog) -> Unit) {
             .fillMaxWidth()
             .padding(8.dp)
             .clip(RoundedCornerShape(16.dp))
-            .clickable(onClick = { onItemClicked(dog) }),
+            .clickable(onClick = { onItemClicked(dog) })
+            .testTag("dogCard"),
         elevation = 0.dp,
         backgroundColor = MaterialTheme.colors.onSurface
     ) {
