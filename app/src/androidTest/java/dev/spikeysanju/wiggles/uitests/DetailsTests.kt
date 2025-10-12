@@ -18,10 +18,12 @@ class DetailsTests {
     @Test
     fun testDogDetailsAndBackNavigation() {
         robot(composeTestRule) {
+            // Navigate to dog detail screen
             home {
                 assertPetListDisplayed()
                 tapOnDog("Miss Agnes", 0)
             }
+            // Verify all dog information is displayed correctly
             detail {
                 topBar {
                     verifyDetailTopBarIsDisplayed("Details")
@@ -29,11 +31,12 @@ class DetailsTests {
                 assertDogName("Miss Agnes")
                 assertDogGender("Female")
                 assertDogLocation("879m away")
-                scrollDetails(2)
+                scrollDetails(2) // Scroll to reveal more content
                 assertDogInfo()
                 assertAdoptButton("Adopt me")
                 pressBack()
             }
+            // Confirm successful navigation back
             home {
                 assertPetListDisplayed()
             }

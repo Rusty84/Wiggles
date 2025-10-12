@@ -1,3 +1,13 @@
+/*
+ * All tests added use Compose UI testing framework with a robot pattern
+ * for maintainable and readable test code.
+ *
+ * Device Compatibility:
+ * Tests run successfully on:
+ * - Pixel 7 API 34
+ * - Pixel 6 PRO API 33
+ * - Nexus S API 33
+ */
 package dev.spikeysanju.wiggles.uitests
 
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -11,6 +21,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+
 @OptIn(ExperimentalAnimationApi::class)
 @RunWith(AndroidJUnit4::class)
 class HomeTests {
@@ -20,6 +31,7 @@ class HomeTests {
     @Test
     fun testHomeScreenAndNavigation() {
         robot(composeTestRule) {
+            // Verify home screen displays correctly and navigate to details
             home {
                 topBar {
                     verifyHomeTopBarIsDisplayed("Hey Spikey,", "Adopt a new friend near you!")
@@ -28,6 +40,7 @@ class HomeTests {
                 assertDogCardsPresentInList()
                 tapOnDog("Skooby Doo", 0)
             }
+            // Confirm detail screen loads and navigation back works
             detail {
                 assertDetailScreen()
                 pressBack()
@@ -38,7 +51,7 @@ class HomeTests {
     @Test
     fun testDirectNavigationToDetailScreenFails() {
         try {
-            // Attempt to navigate directly to detail screen
+            // Attempt invalid robot usage
             robot(composeTestRule) {
                 home {
                     detailRobot {
